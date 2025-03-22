@@ -1,19 +1,19 @@
 package com.learn.ticketbookingsystem.domain.entities;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.learn.ticketbookingsystem.domain.entities.base.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
 
 @Entity
 @Table(name = "airports")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class Airport {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+public class Airport extends BaseEntity {
 
     @Column(nullable = false, length = 255)
     private String name;

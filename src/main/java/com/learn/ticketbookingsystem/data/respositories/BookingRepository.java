@@ -1,12 +1,10 @@
 package com.learn.ticketbookingsystem.data.respositories;
 
+import com.learn.ticketbookingsystem.data.respositories.base.BaseRepository;
 import com.learn.ticketbookingsystem.domain.entities.Booking;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 
 @Repository
-public interface BookingRepository extends JpaRepository<Booking, Long> {
+public interface BookingRepository extends BaseRepository<Booking> {
 }

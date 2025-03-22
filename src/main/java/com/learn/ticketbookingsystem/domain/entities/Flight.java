@@ -1,21 +1,19 @@
 package com.learn.ticketbookingsystem.domain.entities;
 
+import com.learn.ticketbookingsystem.domain.entities.base.BaseEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Table(name = "flights")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class Flight {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+public class Flight extends BaseEntity {
 
     @Column(nullable = false, length = 100)
     private String airline;
@@ -32,16 +30,10 @@ public class Flight {
     private Airport arrivalAirport;
 
     @Column(nullable = false)
-    private Instant departureTime;
+    private Date departureTime;
 
     @Column(nullable = false)
-    private Instant arrivalTime;
-
-    @Column(nullable = false)
-    private int totalSeats;
-
-    @Column(nullable = false)
-    private int availableSeats;
+    private Date arrivalTime;
 
     @Column(nullable = false)
     private double pricePerTicket;

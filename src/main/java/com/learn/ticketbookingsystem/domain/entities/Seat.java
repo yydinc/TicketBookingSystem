@@ -1,29 +1,24 @@
 package com.learn.ticketbookingsystem.domain.entities;
 
+import com.learn.ticketbookingsystem.domain.entities.base.BaseEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "seats")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class Seat {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+public class Seat extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "flight_id", nullable = false)
-    private Flight flight;
+    @JoinColumn(name = "plane_id", nullable = false)
+    private Plane plane;
 
     @Column(nullable = false, length = 10)
     private String seatNumber;
-
-    @Column(nullable = false)
-    private boolean isBooked = false;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
