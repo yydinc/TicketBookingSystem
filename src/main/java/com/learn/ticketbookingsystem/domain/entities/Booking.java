@@ -25,7 +25,4 @@ public class Booking extends BaseEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date bookingEndDate;
-
-    @Column(nullable = false)
-    private double totalPrice;
 }

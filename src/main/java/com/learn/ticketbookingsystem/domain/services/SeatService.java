@@ -1,10 +1,8 @@
 package com.learn.ticketbookingsystem.domain.services;
 
 import com.learn.ticketbookingsystem.domain.entities.Seat;
-import com.learn.ticketbookingsystem.domain.services.base.BaseService;
-import org.springframework.stereotype.Service;
+import com.learn.ticketbookingsystem.domain.services.base.DomainService;
 
-@Service
-public interface SeatService extends BaseService<Seat> {
+public interface SeatService extends DomainService<Seat> {
 
 }

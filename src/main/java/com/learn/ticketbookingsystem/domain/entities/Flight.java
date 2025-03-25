@@ -21,6 +21,8 @@ public class Flight extends BaseEntity {
     @Column(nullable = false, unique = true, length = 20)
     private String flightNumber;
 
+    //plane
+
     @ManyToOne
     @JoinColumn(name = "departure_airport_id", nullable = false)
     private Airport departureAirport;
@@ -36,7 +38,7 @@ public class Flight extends BaseEntity {
     private Date arrivalTime;
 
     @Column(nullable = false)
-    private double pricePerTicket;
+    private double basePricePerTicket;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

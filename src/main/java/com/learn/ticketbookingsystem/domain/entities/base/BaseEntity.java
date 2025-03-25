@@ -12,7 +12,7 @@ import java.util.Date;
 public abstract class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)

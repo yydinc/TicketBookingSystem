@@ -4,7 +4,7 @@ import com.learn.ticketbookingsystem.domain.entities.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Table(name = "payments")
@@ -30,21 +30,13 @@ public class Payment extends BaseEntity {
     @Column(nullable = false)
     private PaymentStatus paymentStatus = PaymentStatus.PENDING;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private PaymentMethod paymentMethod;
-
     @Column(nullable = false, unique = true)
     private String transactionId;
 
     @Column(nullable = false, updatable = false)
-    private Instant paymentDate = Instant.now();
+    private Date paymentDate = new Date();
 
     public enum PaymentStatus {
         SUCCESS, FAILED, PENDING
-    }
-
-    public enum PaymentMethod {
-        CREDIT_CARD, DEBIT_CARD, PAYPAL, UPI
     }
 }

@@ -4,8 +4,6 @@ import com.learn.ticketbookingsystem.domain.entities.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.Instant;
-
 @Entity
 @Table(name = "tickets")
 @Getter
@@ -30,6 +28,5 @@ public class Ticket extends BaseEntity {
     @Column(nullable = false, unique = true, length = 20)
     private String ticketNumber;
 
-    @Column(nullable = false, updatable = false)
-    private Instant issuedAt = Instant.now();
+
 }
